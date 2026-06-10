@@ -1,0 +1,51 @@
+{
+  "name": "gopeed-extension-fuckingfast",
+  "author": "Tonikkl",
+  "title": "FuckingFast",
+  "description": "Resolve FuckingFast file pages to direct downloads.",
+  "icon": "",
+  "version": "0.3.0",
+  "homepage": "https://github.com/Tonikkl/gopeed-extension-fuckingfast",
+  "repository": {
+    "url": "https://github.com/Tonikkl/gopeed-extension-fuckingfast"
+  },
+  "scripts": [
+    {
+      "event": "onResolve",
+      "match": {
+        "urls": [
+          "*://fuckingfast.co/*",
+          "*://www.fuckingfast.co/*",
+          "*://*.fuckingfast.co/*"
+        ]
+      },
+      "entry": "index.js"
+    },
+    {
+      "event": "onStart",
+      "match": {
+        "urls": [
+          "*://fuckingfast.co/*",
+          "*://www.fuckingfast.co/*",
+          "*://*.fuckingfast.co/*"
+        ]
+      },
+      "entry": "index.js"
+    }
+  ],
+  "settings": [
+    {
+      "name": "cookie",
+      "title": "Cookie",
+      "description": "Optional fuckingfast.co cookie for pages that require a browser session.",
+      "type": "string"
+    },
+    {
+      "name": "userAgent",
+      "title": "User-Agent",
+      "description": "Optional browser User-Agent to use while resolving pages.",
+      "type": "string",
+      "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
+    }
+  ]
+}
